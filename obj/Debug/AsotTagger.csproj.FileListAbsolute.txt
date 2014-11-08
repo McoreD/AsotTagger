@@ -1,0 +1,11 @@
+D:\Users\Mike\Documents\GitHub\AsotTagger\bin\Debug\AsotTagger.exe.config
+D:\Users\Mike\Documents\GitHub\AsotTagger\bin\Debug\AsotTagger.exe
+D:\Users\Mike\Documents\GitHub\AsotTagger\bin\Debug\AsotTagger.pdb
+D:\Users\Mike\Documents\GitHub\AsotTagger\bin\Debug\taglib-sharp.dll
+D:\Users\Mike\Documents\GitHub\AsotTagger\bin\Debug\taglib-sharp.pdb
+D:\Users\Mike\Documents\GitHub\AsotTagger\obj\Debug\AsotTagger.csprojResolveAssemblyReference.cache
+D:\Users\Mike\Documents\GitHub\AsotTagger\obj\Debug\AsotTagger.Form1.resources
+D:\Users\Mike\Documents\GitHub\AsotTagger\obj\Debug\AsotTagger.Properties.Resources.resources
+D:\Users\Mike\Documents\GitHub\AsotTagger\obj\Debug\AsotTagger.csproj.GenerateResource.Cache
+D:\Users\Mike\Documents\GitHub\AsotTagger\obj\Debug\AsotTagger.exe
+D:\Users\Mike\Documents\GitHub\AsotTagger\obj\Debug\AsotTagger.pdb
