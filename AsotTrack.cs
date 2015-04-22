@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -15,7 +16,7 @@ namespace AsotTagger
     {
         public string EpisodeNumber { get; set; }
 
-        [DefaultValue(0)]
+        [DefaultValue(1)]
         public uint DiscNumber { get; set; }
 
         public string DateString { get; set; }
@@ -25,6 +26,11 @@ namespace AsotTagger
         public string OriginalLocation { get; private set; }
 
         public string AlbumArtist { get; set; }
+
+        public AsotTrack()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
 
         public AsotTrack(string location)
         {
