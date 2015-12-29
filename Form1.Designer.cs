@@ -34,7 +34,7 @@
             this.btnDownloadCue = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
             this.txtDest = new System.Windows.Forms.TextBox();
-            this.lblFileNames = new System.Windows.Forms.Label();
+            this.lblFileNames = new System.Windows.Forms.TextBox();
             this.panelFileNames.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,11 +110,14 @@
             // 
             // lblFileNames
             // 
-            this.lblFileNames.AutoSize = true;
             this.lblFileNames.Location = new System.Drawing.Point(16, 16);
+            this.lblFileNames.Multiline = true;
             this.lblFileNames.Name = "lblFileNames";
-            this.lblFileNames.Size = new System.Drawing.Size(142, 13);
+            this.lblFileNames.ReadOnly = true;
+            this.lblFileNames.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.lblFileNames.Size = new System.Drawing.Size(1152, 88);
             this.lblFileNames.TabIndex = 0;
+            this.lblFileNames.TabStop = false;
             this.lblFileNames.Text = "Supported file name patterns";
             // 
             // Form1
@@ -142,7 +145,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panelFileNames;
-        private System.Windows.Forms.Label lblFileNames;
+        private System.Windows.Forms.TextBox lblFileNames;
         private System.Windows.Forms.TextBox txtDest;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnDownloadCue;

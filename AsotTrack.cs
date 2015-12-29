@@ -73,6 +73,8 @@ namespace AsotTagger
         /// <param name="epDate">Episode date determined by regex</param>
         private void UpdateTags()
         {
+            File.SetAttributes(this.Location, FileAttributes.Normal);
+
             TagLib.File f = TagLib.File.Create(this.Location);
 
             if (this.AlbumName != f.Tag.Album)
@@ -84,7 +86,7 @@ namespace AsotTagger
                 f.Tag.Genres = new string[] { "Trance/ASOT" };
                 f.Tag.Album = this.AlbumName;
                 f.Tag.Comment = this.DateString; // use foobar2000 to fill this in Date as yyyy-MM-dd
-                f.Tag.Disc = this.DiscNumber;
+                f.Tag.Disc = 1;
             }
             f.Save();
         }

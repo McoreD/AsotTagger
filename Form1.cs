@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AsotTagger.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using AsotTagger.Properties;
 
 namespace AsotTagger
 {
@@ -43,6 +43,7 @@ namespace AsotTagger
             sb.AppendLine("01-armin_van_buuren_-_a_state_of_trance_episode_446-(di.fm)-net-2010-03-04-ps");
             sb.AppendLine("01-armin_van_buuren_-_a_state_of_trance_504-sbd-14-04-2011-tt");
             sb.AppendLine("01-armin_van_buuren_-_a_state_of_trance_509-sbd-05-19-2011");
+            sb.AppendLine("01-armin_van_buuren_-_a_state_of_trance_745-sat-12-24-2015-talion");
             lblFileNames.Text = sb.ToString();
         }
 
@@ -61,14 +62,16 @@ namespace AsotTagger
                 @"01-armin_van_Buuren_-_a_state_of_trance_episode_(?<Number>\d+)-\(di.fm\)-net-(?<Day>\d+)-(?<Month>\d+)-(?<Year>\d+)-rtm",
                 @"01-armin_van_buuren_-_a_state_of_trance_episode_(?<Number>\d+)-\(di.fm\)-net-(?<Year>\d+)-(?<Month>\d+)-(?<Day>\d+)-ps",
                 @"01-armin_van_Buuren_-_a_state_of_trance_(?<Number>\d+)-sbd-(?<Day>\d+)-(?<Month>\d+)-(?<Year>\d+)-tt",
+                @"01-armin_van_buuren_-_a_state_of_trance_(?<Number>\d+)-sat-(?<Month>\d+)-(?<Day>\d+)-(?<Year>\d+)-talion",
                 @"01-armin_van_Buuren_-_a_state_of_trance_(?<Number>\d+)-sbd-(?<Month>\d+)-(?<Day>\d+)-(?<Year>\d+)"
             };
 
             foreach (AsotTrack track in tracks)
             {
+                Match match = null;
                 foreach (string regexp in regexps)
                 {
-                    Match match = Regex.Match(track.FileNameWithoutExtension, regexp, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+                    match = Regex.Match(track.FileNameWithoutExtension, regexp, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
                     if (match.Success)
                     {
                         track.EpisodeNumber = match.Groups["Number"].Value;
@@ -89,13 +92,13 @@ namespace AsotTagger
 
                         break;
                     }
-                    else
-                    {
-                        // attempt to read the details using file tags
-                        track.ReadTagsFromFile();
-                        _listAsotTracks.Add(track);
-                        break;
-                    }
+                }
+
+                if (!match.Success)
+                {
+                    // attempt to read the details using file tags
+                    track.ReadTagsFromFile();
+                    _listAsotTracks.Add(track);
                 }
             }
         }
