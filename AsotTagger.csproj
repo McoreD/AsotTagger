@@ -85,6 +85,7 @@
     <Compile Include="AsotTrack.cs" />
     <Compile Include="CuenationHelper.cs" />
     <Compile Include="CueSharp.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,12 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="asot4xx.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ShareX\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
-      <Project>{327750e1-9fb7-4cc3-8aea-9bc42180cad3}</Project>
-      <Name>ShareX.HelpersLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
